@@ -1,0 +1,16 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: index
+- file: antes_de_empezar
+- file: calendario
+- file: ejercicios_tareas
+- file: circuitos_cuanticos
+  sections:
+    - file: circuitos_cuanticos/transformaciones
+    - file: circuitos_cuanticos/circuitos
+    - file: circuitos_cuanticos/un_cubit
+    - file: circuitos_cuanticos/compuertas_control
+    - file: circuitos_cuanticos/compuertas_universales
+    - file: circuitos_cuanticos/cubits_multiples
+    - file: circuitos_cuanticos/mediciones_cuanticas

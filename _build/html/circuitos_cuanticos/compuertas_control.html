@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compuertas Control-U &#8212; Introduccion a la Computacion Cuantica con IBM Qiskit</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compuertas Universales UX" href="compuertas_universales.html" />
+    <link rel="prev" title="Compuertas cuanticas aplicadas en un cubit" href="un_cubit.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduccion a la Computacion Cuantica con IBM Qiskit</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Inicio
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../antes_de_empezar.html">
+   Antes de empezar…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calendario.html">
+   Calendario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ejercicios_tareas.html">
+   Tareas y Ejercicios
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../circuitos_cuanticos.html">
+   Un Modelo Cuantico de Computacion
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="transformaciones.html">
+     Transformaciones Unitarias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos.html">
+     El Modelo de Circuitos Cuanticos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="un_cubit.html">
+     Compuertas cuanticas aplicadas en un cubit
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Compuertas Control-U
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compuertas_universales.html">
+     Compuertas Universales UX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cubits_multiples.html">
+     Compuertas aplicadas a estados de múltiples cúbits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mediciones_cuanticas.html">
+     Mediciones con Circuitos Cuanticos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/circuitos_cuanticos/compuertas_control.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/circuitos_cuanticos/compuertas_control.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica/issues/new?title=Issue%20on%20page%20%2Fcircuitos_cuanticos/compuertas_control.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/delgadoandrea/computacion-cuantica/master?urlpath=tree/circuitos_cuanticos/compuertas_control.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="compuertas-control-u">
+<span id="compuertas-control"></span><h1>Compuertas Control-U<a class="headerlink" href="#compuertas-control-u" title="Permalink to this headline">¶</a></h1>
+<p>Las compuertas de tipo control se derivan de sus contrapartes clasicas. Dichas compuertas son de tipo condicionado, ya que ejecutan una rutina o tarea <em>B</em>, si una condicion determinada <em>A</em> es verdad, <em>If A, then B</em>. El caso mas popular de las compuertas de control, es el caso de la compuerta <em>NOT</em>. Las compuertas cuanticas son representadas por operadores que actuan sobre los vectores de estado, por lo tanto, la compuerta <em>NOT</em> tiene el siguiente efecto para los estados base |0&gt; y |1&gt;:</p>
+<p><span class="math notranslate nohighlight">\(
+NOT\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\)</span></p>
+<p>y de la misma manera,</p>
+<p><span class="math notranslate nohighlight">\(
+NOT\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+\)</span></p>
+<p>y por lo tanto, la compuerta <em>NOT</em> tiene la siguiente representacion de matriz:</p>
+<p><span class="math notranslate nohighlight">\(
+NOT = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\)</span></p>
+<p>La compuerta <em>NOT</em>, entonces corresponde a la matriz X de Pauli, y puede ser aplicada a sistemas de un cubit. La compuerta <em>CNOT</em> (controlled-NOT) actúa sobre mas de un cubit, en los bits de <em>control</em> y el cubit <em>target</em>. La compuerta <em>CNOT</em> aplica la compuerta <em>NOT</em> sobre el cubit <em>target</em> si el cubit control está en 0 y lo deja igual si está en 1. El cubit control queda inalterado. La compuerta <em>CNOT</em> tiene la siguiente representacion de matriz:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+\)</span></p>
+<p>De la misma forma que la compuerta <em>CNOT</em>, se puede definir la compuerta <em>Control-U</em> (c-U) para cualquier compuerta de 1-cubit <em>U</em> que sera una compuerta de 1-cubit que cumple con las siguientes condiciones:</p>
+<p><span class="math notranslate nohighlight">\(
+|c&gt;|t&gt; \rightarrow |c&gt; U^{c}|t&gt;
+\)</span></p>
+<p>donde |c&gt; corresponde al cubit de control, |t&gt; al cubit target, y la transformacion se aplica al cubit |t&gt;, condicionado por el cubit |c&gt;. Vamos a ver ahora como crear un circuito equivalente a la compuerta <em>c-U</em> usando compuertas de 1-cubit y compuertas <em>CNOT</em>. Para ello usaremos la descomposicion <span class="math notranslate nohighlight">\(U = e^{i\alpha}AXBXC\)</span> del corolario demostrado anteriormente.</p>
+<p>Primero veremos cómo aplicar el factor de fase <span class="math notranslate nohighlight">\(e^{i\alpha}\)</span> sobre el bit target en forma controlada por el bit control. Esto quiere decir que si el bit control es |1&gt;, la transformacion es aplicada. Por el contrario, si el bit control es |0&gt;, la transformacion no es aplicado. Por esta razon, la compuerta se denomina de <em>desfasaje controlado</em>. El circuito para dicha compuerta es el siguiente:</p>
+<p><img alt="circuito" src="../_images/defasaje.png" /></p>
+<p>Ahora es facil darse cuenta de que el circuito equivalente a la compuerta <em>c-U</em> es el de la siguiente figura:</p>
+<p><img alt="circuito" src="../_images/circuito_ABC.png" /></p>
+<p>Este circuito se compone de dos partes:</p>
+<p>(1) Aplicar el cambio de fase mediante el factor <span class="math notranslate nohighlight">\(e^{i\alpha}\)</span> al cúbit target, controlado por el cúbit de control. Esto implica, que si el cúbit de control se encuentra en el estado |0&gt;, el cúbit target se queda en el mismo estado. Sin embargo, si el cúbit de control se encuentra en el estado |1&gt;, un cambio de fase de <span class="math notranslate nohighlight">\(e^{i\alpha}\)</span> se aplica al cúbit target. El efecto de aplicar esta compuerta seria el siguiente:</p>
+<p><span class="math notranslate nohighlight">\(
+|00&gt; \rightarrow |00&gt;, |01&gt; \rightarrow |01&gt;, |10&gt; \rightarrow e^{i\alpha}|10&gt;, |11&gt; \rightarrow e^{i\alpha}|11&gt;
+\)</span></p>
+<p>(2) Finalmente, si añadimos el resto de las compuertas <span class="math notranslate nohighlight">\(AXBXC\)</span>, completamos nuestra definicionde compuerta <em>c-U</em>. El efecto de el producto de estos oepradores se puede entender explorando el efecto que tiene en cada uno de los cubits. Es decir, suponiendo que el cubit de control seencuentra en el estado |1&gt;. Entonces la operacion <span class="math notranslate nohighlight">\(U = e^{i\alpha}AXBXC\)</span> se aplica al segundo cubit. Si por el contrario, el cúbit de control se encuentra en el estado |0&gt;, la operacion <span class="math notranslate nohighlight">\(ABC=I\)</span> es aplicada al segundo cubit, lo que implica que permanece igual.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "delgadoandrea/computacion-cuantica",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./circuitos_cuanticos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="un_cubit.html" title="previous page">Compuertas cuanticas aplicadas en un cubit</a>
+    <a class='right-next' id="next-link" href="compuertas_universales.html" title="next page">Compuertas Universales UX</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andrea Delgado<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

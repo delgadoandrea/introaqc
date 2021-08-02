@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to the Command Line &#8212; Introduccion a la Computacion Cuantica con IBM Qiskit</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduccion a la Computacion Cuantica con IBM Qiskit</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Inicio
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="antes_de_empezar.html">
+   Antes de empezar…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="calendario.html">
+   Calendario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ejercicios_tareas.html">
+   Tareas y Ejercicios
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="circuitos_cuanticos.html">
+   Un Modelo Cuantico de Computacion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/transformaciones.html">
+     Transformaciones Unitarias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/circuitos.html">
+     El Modelo de Circuitos Cuanticos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/un_cubit.html">
+     Compuertas cuanticas aplicadas en un cubit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/compuertas_control.html">
+     Compuertas Control-U
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/compuertas_universales.html">
+     Compuertas Universales UX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/cubits_multiples.html">
+     Compuertas aplicadas a estados de múltiples cúbits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos_cuanticos/mediciones_cuanticas.html">
+     Mediciones con Circuitos Cuanticos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/unix.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/unix.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica/issues/new?title=Issue%20on%20page%20%2Funix.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/delgadoandrea/computacion-cuantica/master?urlpath=tree/unix.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-line-basics">
+   Command Line Basics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-line-navigation">
+   Command Line Navigation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editing-the-filesystem">
+   Editing the filesystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-and-changing-the-file-system">
+   Viewing and changing the file system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-line-redirection">
+   Command line redirection
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-the-command-line">
+<span id="launch-thebe"></span><h1>Introduction to the Command Line<a class="headerlink" href="#introduction-to-the-command-line" title="Permalink to this headline">¶</a></h1>
+<p>This module is designed to introduce you to the basic commands and tools needed to run your first scientific computing application. We will start with basic commands to execute in a Unix Shell.</p>
+<p>The command line is the text-based interface for the computer’s operating system as a powerful alternative to the click-pointer interaction. It is a program that takes in commands and passes them on to the computer’s operating system to run. For example, through the command line, you can create or delete files and edit their content. The advantage of using the command line is its power. You can run programs, write scripts to automate common tasks, and combine simple commands to handle difficult tasks. By the end of this session, you should be able to navigate, access, and modify files and folders on your computer - all without a mouse!</p>
+<div class="section" id="command-line-basics">
+<h2>Command Line Basics<a class="headerlink" href="#command-line-basics" title="Permalink to this headline">¶</a></h2>
+<p>In the terminal, the first thing you see is an <strong>$</strong> symbol. This is called a <em>shell prompt</em>, and whenever you see it, it means that the terminal or shell is ready to accepy a command. But what is a command? A <em>command</em> is a text-based instruction to the computer to perform a specific task. For example, one of the commands you will use on a daily basis is <em>ls</em>.</p>
+<p>When you type <em>ls</em>, the command line looks at the directory you are in, and “lists” all the files and directories inside of it. You can try it now for yourself!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_build
+_config.yml
+_toc.yml
+antes_de_empezar.md
+calendario.md
+circuit.png
+circuitos.md
+circuitos_cuanticos
+circuitos_cuanticos.md
+content.md
+ejercicios_tareas.md
+images
+index.md
+intro.md
+logo.jpeg
+logo.png
+m1.png
+m2.png
+markdown.md
+notebooks.ipynb
+python.md
+python_by_example.md
+references.bib
+requirements.txt
+transformaciones.md
+unix.md
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="command-line-navigation">
+<h2>Command Line Navigation<a class="headerlink" href="#command-line-navigation" title="Permalink to this headline">¶</a></h2>
+<p>When using the command line, we refer to folders as <em>directories</em>. Files and directories on your computer are organized into a <em>filesystem</em>. The <em>filesystem</em> is the tree structure organization of the files and directorates in your computer. Think about it as the <em>Mac Finder</em> or <em>Windows Explorer</em> without the ability to access directories and files with a click.</p>
+<ul class="simple">
+<li><p>The top directory in the filesystem is the <em>root</em> directory.</p></li>
+<li><p>In this nested structure, we refer to directories as <em>parents</em> and <em>childs</em> according to their position in the tree. The top directory is the <em>parent</em> of any other file or directory in the system. We are now going to explore a few basic commands to navigate your computer’s <em>filesystem</em>.</p></li>
+</ul>
+<p>The next command we are going to explore is <em>pwd</em>. It stands for <em>print working directory</em> and it indeed, outputs the name of the directory you are currently in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/1zd/intro-a-qc
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our next command is <em>cd</em>, which stands for <em>change directory</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd &lt;folder-name&gt;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: line 1: syntax error near unexpected token `newline&#39;
+bash: line 1: `cd &lt;folder-name&gt;&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">a61e9eac41c4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;cd &lt;folder-name&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2389</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2390</span>                 <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2391</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2392</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2393</span> 
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/IPython/core/magics/script.py</span> in <span class="ni">named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>                 <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">142</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> 
+<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="c1"># write a basic docstring:</span>
+
+<span class="nn">&lt;decorator-gen-103&gt;</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/IPython/core/magics/script.py</span> in <span class="ni">shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">245</span>             <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> 
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="k">def</span> <span class="nf">_run_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">to_close</span><span class="p">):</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;cd &lt;folder-name&gt;\n&#39;&#39; returned non-zero exit status 2.
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>cd</em> also allows you to navigate deeper into the <em>filesystem</em> without having to use it twice. For example, if you want to access <em>Folder1</em> inside <em>FolderA</em>, you can type</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd FolderA/Folder1/
+</pre></div>
+</div>
+</div>
+</div>
+<p>A useful tip is to use the <em>tab</em> key to autocomplete the name of a given file or folder. It will probably won’t work on the web browser environment but you can try it on your Unix terminal. Also, let’s say you want to access <em>Folder2</em> inside <em>FolderA</em> while you are already on <em>Folder1</em>, you can go back one level by typyng ../</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd ../Folder2/
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="editing-the-filesystem">
+<h2>Editing the filesystem<a class="headerlink" href="#editing-the-filesystem" title="Permalink to this headline">¶</a></h2>
+<p>You can create a directory by typing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mkdir &lt;your-name&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>to create a file, you can simply do</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+touch &lt;filename&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-and-changing-the-file-system">
+<h2>Viewing and changing the file system<a class="headerlink" href="#viewing-and-changing-the-file-system" title="Permalink to this headline">¶</a></h2>
+<p>The shell command <em>cp</em> is used to copy files or directories. The basic argument structure is <em>cp source destination</em>, where the <em>source</em> is the file/directory to copy to the <em>destination</em> file/directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cp file1 file1_copy
+cp file1 file2 destination_folder
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shell command <em>mv</em> is used to move a file into a directory. Use <em>mv</em> with the source file as the first argument and the destination directory as the second argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+mv file.txt myFolder/
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shell command <em>rm</em> is used to delete files and directories. The <em>-r</em> flag deletes a directory and all of its files and directories (<em>rm -r</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+rm -r bad_selfies
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shell command <em>ls</em> is used to list the contents in a directory. It can be combined with the following command options:</p>
+<ul class="simple">
+<li><p><em>-a</em>: lists all contents, including hidden files and directories.</p></li>
+<li><p><em>-l</em>: lists all contents, in long format.</p></li>
+<li><p><em>-t</em>: lists all contents, by the time they were last modified.</p></li>
+</ul>
+</div>
+<div class="section" id="command-line-redirection">
+<h2>Command line redirection<a class="headerlink" href="#command-line-redirection" title="Permalink to this headline">¶</a></h2>
+<p>On a command line, <em>redirection</em> is the process of using the input/output of a file or command to use it as an input for another file. Redirection can be done by using the operators <em>&gt;</em> and <em>&gt;&gt;</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+ls &gt; directories_list.txt
+ls &gt;&gt; directories_list.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <em>&gt;</em> symbol is used to redirect output by taking the output from the command on the left and passing as input to the file on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+echo &quot;Hola&quot; &gt; hola.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shell command <em>cat</em> displays the contents of one or more files to the terminal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cat poem.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>if you just want to print the first or last few lines of a file, you can use <em>head</em> or <em>tail</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+head poem.txt
+tail poem.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <em>&gt;&gt;</em> shell command is used to redirect the standard output of the command line on the left and append (add) it to the end of the file on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+#This command will append &quot;Hello World!&quot; to greetings.txt
+echo &quot;Hello World!&quot; &gt;&gt; greetings.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <em>|</em> command is called a <em>pipe</em>. It is used to pipe, or transfer, the standard output from the command on its left into the standard input of the command on its right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+# First, echo &quot;Hello World&quot; will send Hello World to the standard output.
+# Next, pipe | will transfer the standard output to the next command&#39;s standard input.
+# Finally, wc -w will count the number of words from its standard input, which is 2.
+echo &quot;Hello World&quot; | wc -w
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shell command <em>grep</em> is used to search files for lines that match a pattern and returns the results. Various options can be specified along with the <em>grep</em> command to specify the search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+grep &#39;Andrea&#39; names.txt
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The shell <em>grep</em> command searches files for a particular pattern. Adding the <em>-i</em> option can be used to search files for lines that match a pattern, case sensitive, and returns the results.</p></li>
+<li><p>The <em>-R</em> option searches all files in a directory, including its subdirectories, and outputs filenames and lines containing matched results.</p></li>
+</ul>
+<p>Finally, you can run bash code on your terminal, to execute a specific task. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+for i in a b c;
+do
+echo $i
+done
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "delgadoandrea/computacion-cuantica",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andrea Delgado<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

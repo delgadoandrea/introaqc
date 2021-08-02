@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mediciones con Circuitos Cuanticos &#8212; Introduccion a la Computacion Cuantica con IBM Qiskit</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Compuertas aplicadas a estados de múltiples cúbits" href="cubits_multiples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduccion a la Computacion Cuantica con IBM Qiskit</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Inicio
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../antes_de_empezar.html">
+   Antes de empezar…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calendario.html">
+   Calendario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ejercicios_tareas.html">
+   Tareas y Ejercicios
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../circuitos_cuanticos.html">
+   Un Modelo Cuantico de Computacion
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="transformaciones.html">
+     Transformaciones Unitarias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos.html">
+     El Modelo de Circuitos Cuanticos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="un_cubit.html">
+     Compuertas cuanticas aplicadas en un cubit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compuertas_control.html">
+     Compuertas Control-U
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compuertas_universales.html">
+     Compuertas Universales UX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cubits_multiples.html">
+     Compuertas aplicadas a estados de múltiples cúbits
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Mediciones con Circuitos Cuanticos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/circuitos_cuanticos/mediciones_cuanticas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/circuitos_cuanticos/mediciones_cuanticas.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica/issues/new?title=Issue%20on%20page%20%2Fcircuitos_cuanticos/mediciones_cuanticas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/delgadoandrea/computacion-cuantica/master?urlpath=tree/circuitos_cuanticos/mediciones_cuanticas.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-estados-de-bell">
+   Ejemplo: Estados de Bell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mediciones-proyectivas-incompletas">
+   Mediciones proyectivas incompletas
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mediciones-con-circuitos-cuanticos">
+<span id="mediciones-cuanticas"></span><h1>Mediciones con Circuitos Cuanticos<a class="headerlink" href="#mediciones-con-circuitos-cuanticos" title="Permalink to this headline">¶</a></h1>
+<p>En esta seccion vamos a explorar como podemos utilizar circuitos cuanticos para describir e implementar los diferentes tipos de mediciones cuanticas descritas durante las primeras sesiones del curso. Especificamente, el tipo de mediciones que vamos a explorar es el conjunto de mediciones que se ejecutan con respecto a la base estandar.</p>
+<p>Las mediciones proyectivas son muy utilizadas en la computacion y comunicacion cuanticas. En particular, los protocolos de codificacion superdensa y teleportacion cuantica estan basados en mediciones denominadas de <em>Von Neumann</em>. Sea un estado <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> que expresado en la base ortonormal <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> tiene el desarrollo:</p>
+<p><span class="math notranslate nohighlight">\(
+|\Psi&gt; = \sum_{j}\alpha_{j}|\psi_{j}&gt;
+\)</span></p>
+<p>Una <strong>medicion de Von Neumann</strong> de <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> con respecto al conjunto de bases <span class="math notranslate nohighlight">\(|\psi&gt;\)</span>, descritos por los proyectores ortogonales <span class="math notranslate nohighlight">\(\left{|\psi_{j}&gt;&lt;\psi_{j}|\right}\)</span> dara como resultado “j” y el estado quedará en el estado <span class="math notranslate nohighlight">\(|\psi_{j}&gt;\)</span>  con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{j}|^{2}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+Tr(|\Psi&gt;&lt;\Psi||\psi_{j}&gt;&lt;\psi_{j}|) = Tr(&lt;\psi_{j}|\Psi&gt;&lt;\Psi|\psi_{j}&gt;)
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+= &lt;\psi_{j}|\Psi&gt;&lt;\Psi|\psi_{j}&gt;
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+|&lt;\psi_{j}|\Psi&gt;|^{2}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+|\alpha_{j}|^{2}
+\)</span></p>
+<p>Normalmente, un dispositivo fisico es capaz de ejecutar una medicion con respecto a la base estandar en los cubits individuales, pero se puede utilizar un circuito cuantico que registra la medicion de Von Neumann descrita por medio de un registro clasico de cubits multiples. Primero se construye un circuito que realiza la transformacion unitaria:</p>
+<p><span class="math notranslate nohighlight">\(
+U|\psi&gt; = |j&gt;
+\)</span></p>
+<p>en esta expresion, el indice <em>j</em> se supone en <em>n-bit</em> binario (es decir, 0 o 1) y |j&gt; es el estado de la base computacional de <em>n-cubits</em> correspondiente a <em>j</em>. <strong>Entonces, podemos decir que el operador <span class="math notranslate nohighlight">\(U\)</span> hace el cambio de base de la base <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> a la base computacional.</strong> Por lo tanto, para un estado arbitrario <span class="math notranslate nohighlight">\(\sum_{j}\alpha_{j}|\psi_{j}&gt;\)</span>, utilizamos un circuito cuantico para ejecutar el cambio de base mediado por el operador <em>U</em> y despues ejecutamos una medicion el registro clasico (en este caso, <span class="math notranslate nohighlight">\(|j&gt;\)</span>) en la base computacional. Finalmente se aplica el cambio de base inverso, mediado por el operador <span class="math notranslate nohighlight">\(U^{-1}\)</span> (reemplazando cada compuerta u operador por su inverso). El circuito completo se muestra en la siguiente figura:</p>
+<p><img alt="m1" src="../_images/m1.png" /></p>
+<p>Alternativamente, es posible utilizar una estrategia en la que no se mide el estado intermedio en la base computacional. En cambio, se “copia” la informacion del sistema en el que estamos interesados, a un registro clasico de tipo ancilla y despues ejecutamos una medicion en la base estandar. Esta idea se puede visualizar en el siguiente diagrama:</p>
+<p><img alt="m2" src="../_images/m2.png" /></p>
+<p>En este circuito se registran los cubits en los cables inferiores que son medidos luego en la base computacional.</p>
+<div class="section" id="ejemplo-estados-de-bell">
+<h2>Ejemplo: Estados de Bell<a class="headerlink" href="#ejemplo-estados-de-bell" title="Permalink to this headline">¶</a></h2>
+<p>Como ejemplo de cambio de base <em>U</em> vamos a suponer que queremos implementar una medicion de tipo <em>Von Neumann</em> en un estado formado por dos cubits, con respecto a la base ortonormal formada por los estados de Bell:</p>
+<p><span class="math notranslate nohighlight">\(
+|\beta_{00}&gt; = \frac{1}{\sqrt{2}}(|00&gt; + |11&gt;)
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+|\beta_{01}&gt; = \frac{1}{\sqrt{2}}(|01&gt; + |10&gt;)
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+|\beta_{10}&gt; = \frac{1}{\sqrt{2}}(|00&gt; - |11&gt;)
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+|\beta_{11}&gt; = \frac{1}{\sqrt{2}}(|01&gt; - |10&gt;)
+\)</span></p>
+<p>Esta base se conoce como <em>base de Bell</em> y sus estados como estados de Bell (tambien llamados pares EPR). Un circuito que realiza el cambio de base de la base computacional a la de Bell se muestra en la figura siguiente:</p>
+<p><img alt="m3" src="../_images/m3.png" /></p>
+<p>Es importante mencionar, que el principio de reversibilidad implica que para hacer un cambio de base de la base de Bell a la base estandar, simplemente basta con ejecutar el circuito del diagrama anterior en orden inverso. Para verificar este algoritmo, supongamos que la entrada al circuito sea el estado de la base computacional <span class="math notranslate nohighlight">\(|\psi_{1}&gt;=|00&gt;\)</span>. Despues de la compuerta de Hadamard, el estado es:</p>
+<p><span class="math notranslate nohighlight">\(
+|\psi_{2}&gt;=\frac{1}{\sqrt{2}} (|0&gt; + |1&gt;)|0&gt;
+=\frac{1}{\sqrt{2}} (|00&gt; + |01&gt;)
+\)</span></p>
+<p>Donde hemos sido muy cuidadosos de mantener el orden de los cubits. Despues, la compuerta control-NOT transforma <span class="math notranslate nohighlight">\(\psi_{2}\)</span> en el siguiente estado:</p>
+<p><span class="math notranslate nohighlight">\(
+|\psi_{3}&gt; = \frac{1}{\sqrt{2}} (|00&gt; + |11&gt;)
+\)</span></p>
+<p>y por lo tanto, tenemos que <span class="math notranslate nohighlight">\(|\psi_{3}&gt; = |\beta_{00}&gt;\)</span>. De esta manera, verificamos que el circuito ejecuto correctamente el cambio de base en el estado de entrada <span class="math notranslate nohighlight">\(|00&gt;\)</span>. De manera similar, el mismo circuito ejecuta el cambio de base en los otros tres estados posibles en la base computacional, |01&gt;, |10&gt;, y |11&gt;, transformandolos en <span class="math notranslate nohighlight">\(|\beta_{01}&gt;,|\beta_{10}&gt;\)</span> y <span class="math notranslate nohighlight">\(|\beta_{11}&gt;\)</span>, respectivamente.</p>
+</div>
+<div class="section" id="mediciones-proyectivas-incompletas">
+<h2>Mediciones proyectivas incompletas<a class="headerlink" href="#mediciones-proyectivas-incompletas" title="Permalink to this headline">¶</a></h2>
+<p>Las mediciones proyectivas incompletas y mas importante, su implementacion, se volvera relevante para los algoritmos de correccion de errores. Como ejemplo de una medicion proyectiva incompleta, exploraremos la medición de paridad. Los proyectores de paridad corresponden a los opearadores <span class="math notranslate nohighlight">\(P_{0} = |0&gt;&lt;0|\)</span> y <span class="math notranslate nohighlight">\(P_{1} = |1&gt;&lt;1|\)</span>. De esta manera, cualquier estado de entrada, <span class="math notranslate nohighlight">\(|\Psi&gt; = \sum_{x}\beta_{x}|x&gt;\)</span> se puede expresar como <span class="math notranslate nohighlight">\(|\Psi&gt; = \alpha_{0}|\Psi_{0}&gt;+\alpha_{1}|\Psi_{1}&gt;\)</span>, donde</p>
+<p><span class="math notranslate nohighlight">\(
+\alpha_{i} = \sqrt{&lt;\Psi|P_{i}|\Psi&gt;}
+\)</span></p>
+<p>y por lo tanto, <span class="math notranslate nohighlight">\(|\Psi_{i}&gt; = \frac{P_{i}|\Psi&gt;}{\alpha_{i}}\)</span>. De esta manera, una medición de paridad resultará en 0 y el estado <span class="math notranslate nohighlight">\(|\Psi_{0}\)</span> con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{0}|^{2}\)</span> y el estado <span class="math notranslate nohighlight">\(|\Psi_{1}&gt;\)</span> con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{1}|^{2}\)</span>. Regresando al ejemplo de implementacion de una medición proyectiva, el siguiente circuito calcula la paridad de estados en un sistema de 3-cúbits:</p>
+<p><img alt="m4" src="../_images/m4.png" /></p>
+<p>En este diagrama, la medición de cada uno de los 3 cúbits se ejecuta por medio de las compuertas de tipo CNOT, produciendo el estado <span class="math notranslate nohighlight">\(|\Psi_{b}&gt;\)</span> como estado de salida con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{\beta}|^{2}\)</span> con <span class="math notranslate nohighlight">\(b=0,1\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "delgadoandrea/computacion-cuantica",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./circuitos_cuanticos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="cubits_multiples.html" title="previous page">Compuertas aplicadas a estados de múltiples cúbits</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andrea Delgado<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

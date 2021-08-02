@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compuertas cuanticas aplicadas en un cubit &#8212; Introduccion a la Computacion Cuantica con IBM Qiskit</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compuertas Control-U" href="compuertas_control.html" />
+    <link rel="prev" title="El Modelo de Circuitos Cuanticos" href="circuitos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduccion a la Computacion Cuantica con IBM Qiskit</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Inicio
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../antes_de_empezar.html">
+   Antes de empezar…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../calendario.html">
+   Calendario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ejercicios_tareas.html">
+   Tareas y Ejercicios
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../circuitos_cuanticos.html">
+   Un Modelo Cuantico de Computacion
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="transformaciones.html">
+     Transformaciones Unitarias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="circuitos.html">
+     El Modelo de Circuitos Cuanticos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Compuertas cuanticas aplicadas en un cubit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compuertas_control.html">
+     Compuertas Control-U
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compuertas_universales.html">
+     Compuertas Universales UX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cubits_multiples.html">
+     Compuertas aplicadas a estados de múltiples cúbits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mediciones_cuanticas.html">
+     Mediciones con Circuitos Cuanticos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/circuitos_cuanticos/un_cubit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/circuitos_cuanticos/un_cubit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/delgadoandrea/computacion-cuantica/issues/new?title=Issue%20on%20page%20%2Fcircuitos_cuanticos/un_cubit.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/delgadoandrea/computacion-cuantica/master?urlpath=tree/circuitos_cuanticos/un_cubit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#las-compuertas-de-pauli-como-operadores-de-rotacion">
+   Las compuertas de Pauli como operadores de rotacion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compuertas-de-un-solo-cubit-como-producto-de-los-operadores-de-rotacion">
+     Compuertas de un solo cubit como producto de los operadores de rotacion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descomposicion-de-compuertas-de-1-cubit">
+   Descomposicion de compuertas de 1-cubit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descomposicion-z-y-para-un-operador-unitario-aplicado-a-un-cubit">
+     Descomposicion Z-Y para un operador unitario aplicado a un cubit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corolario">
+     Corolario
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="compuertas-cuanticas-aplicadas-en-un-cubit">
+<span id="un-cubit"></span><h1>Compuertas cuanticas aplicadas en un cubit<a class="headerlink" href="#compuertas-cuanticas-aplicadas-en-un-cubit" title="Permalink to this headline">¶</a></h1>
+<p>El caso mas sencillo es el de las compuertas cuanticas que operan en un solo cubit. Para empezar, vamos a repasar la representacion de un cubit como estado cuantico.</p>
+<p>El estado de un cubit se puede representar de la siguiente forma:</p>
+<p><span class="math notranslate nohighlight">\(
+    |\Psi&gt; = \alpha|0&gt; + \beta|1&gt;
+\)</span></p>
+<p>En la ecuacion anterior, <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> representan numeros complejos que indican las amplitudes de probabilidad para los estados base <span class="math notranslate nohighlight">\(|0&gt;\)</span> y <span class="math notranslate nohighlight">\(|1&gt;\)</span>. La suma de estas probabilidades de amplitud debe ser igual a 1 y por lo tanto, tenemos la condicion: <span class="math notranslate nohighlight">\(|\alpha|^{2} + |\beta|^{2} = 1\)</span>. Un cubit en el estado <span class="math notranslate nohighlight">\(\alpha|0&gt; + \beta|1&gt;\)</span> puede ser visualizado como un punto <span class="math notranslate nohighlight">\((\theta, \phi)\)</span> en la esfera de Bloch, donde <span class="math notranslate nohighlight">\(\alpha = cos(\theta/2)\)</span> y <span class="math notranslate nohighlight">\(\beta = e^{i\phi}sin(\theta/2)\)</span>. Finalmente, las bases ortogonales <span class="math notranslate nohighlight">\(|0&gt;\)</span> y <span class="math notranslate nohighlight">\(|1&gt;\)</span> pueden ser representadas como vectores de columna:</p>
+<p><span class="math notranslate nohighlight">\(
+    |0&gt; = \begin{pmatrix} 1 \\ 0 \end{pmatrix},
+    |1&gt; = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\)</span></p>
+<p>Los operadores que actuan en un cubit deben preservar la norma de los vectores base, y por lo tanto, las compuertas cuanticas que operan en un cubit son matrices unitarias de estructura 2X2. Dentro de esta categoria, las matrices de Pauli son de los operadores mas relevantes para la computacion cuantica.</p>
+<p><span class="math notranslate nohighlight">\(
+    X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}; Y = \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}; Z = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}
+\)</span></p>
+<p>Otras compuertas cuanticas para un solo cubit incluyen la compuerta de Hadamard (H), la compuerta de fase (S), y la compuerta <span class="math notranslate nohighlight">\(\pi/8\)</span> (T):</p>
+<p><span class="math notranslate nohighlight">\(
+    H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix}; S = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; i \end{pmatrix}; T = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; exp(i\pi/4) \end{pmatrix}
+\)</span></p>
+<p><strong>Ejercicio:</strong> Comprobar que <span class="math notranslate nohighlight">\(H=(X+Z)/\sqrt{2}\)</span> y <span class="math notranslate nohighlight">\(S=T^{2}\)</span></p>
+<div class="section" id="las-compuertas-de-pauli-como-operadores-de-rotacion">
+<h2>Las compuertas de Pauli como operadores de rotacion<a class="headerlink" href="#las-compuertas-de-pauli-como-operadores-de-rotacion" title="Permalink to this headline">¶</a></h2>
+<p>Las matrices de Pauli son la base de 3 matrices unitarias muy importantes, los operadores de rotacion. Los operadores de rotacion sobre los ejes <span class="math notranslate nohighlight">\(\hat{x}, \hat{y},\)</span> y <span class="math notranslate nohighlight">\(\hat{z}\)</span> son generados al exponenciar las matrices de Pauli:</p>
+<p><span class="math notranslate nohighlight">\(
+	R_{x}(\theta) = e^{-i\theta X/2} = cos\frac{\theta}{2}I - i sin\frac{\theta}{2}X = \begin{pmatrix} cos\frac{\theta}{2} &amp; -isin\frac{\theta}{2} \\ -isin\frac{\theta}{2} &amp; cos\frac{\theta}{2} \end{pmatrix}\\
+\)</span>
+<span class="math notranslate nohighlight">\(
+	R_{y}(\theta) = e^{-i\theta Y/2} = cos\frac{\theta}{2}I - i sin\frac{\theta}{2}Y = \begin{pmatrix} cos\frac{\theta}{2} &amp; -sin\frac{\theta}{2} \\ sin\frac{\theta}{2} &amp; cos\frac{\theta}{2} \end{pmatrix}\\
+\)</span>
+<span class="math notranslate nohighlight">\(
+	R_{z}(\theta) = e^{-i\theta Z/2} = cos\frac{\theta}{2}I - i sin\frac{\theta}{2}Z = \begin{pmatrix} e^{-i\frac{\theta}{2}} &amp; 0 \\ 0 &amp; e^{i\frac{\theta}{2}} \end{pmatrix}\\
+\)</span></p>
+<p>Por ejemplo, consideremos un estado arbitrario de 1-cubit descrito en terminos de sus angulos del vector de Bloch <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\tau\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+    cos\frac{\sigma}{2}|0&gt; + e^{i\tau}sin\frac{\sigma}{2}|1&gt;
+\)</span></p>
+<p>cuya representacion en vector de columna corresponde a:</p>
+<p><span class="math notranslate nohighlight">\(
+    \begin{pmatrix}
+    cos\frac{\sigma}{2} \\ e^{i\tau}sin\frac{\sigma}{2}
+    \end{pmatrix}
+\)</span></p>
+<p>El efecto de aplicar <span class="math notranslate nohighlight">\(R_{z}(\theta)\)</span> a este estado sera:</p>
+<p><span class="math notranslate nohighlight">\(
+	 \begin{pmatrix} e^{-i\frac{\theta}{2}} &amp; 0 \\ 0 &amp; e^{-i\frac{\theta}{2}} \end{pmatrix} \begin{pmatrix}
+    cos\frac{\sigma}{2} \\ e^{i\tau}sin\frac{\sigma}{2}
+    \end{pmatrix} 
+\)</span>
+<span class="math notranslate nohighlight">\(
+    =  \begin{pmatrix}
+    e^{-i\frac{\theta}{2}}cos\frac{\sigma}{2} \\ e^{-i\frac{\theta}{2}}e^{i\tau}sin\frac{\sigma}{2} \end{pmatrix}\\
+\)</span>
+<span class="math notranslate nohighlight">\(   
+    = e^{-i\frac{\theta}{2}}\begin{pmatrix}
+    cos\frac{\sigma}{2} \\ e^{i\theta}e^{i\tau}sin\frac{\sigma}{2} \\
+    \end{pmatrix}\\
+\)</span>
+<span class="math notranslate nohighlight">\(
+    = e^{-i\frac{\theta}{2}}(cos\frac{\theta}{2}|0&gt; + e^{i(\tau + \theta})sin\frac{\theta}{2}|1&gt;)
+\)</span></p>
+<p>Eliminando la fase global, el estado resultante de aplicar <span class="math notranslate nohighlight">\(R_{z}(\theta)\)</span> es:</p>
+<p><span class="math notranslate nohighlight">\(
+    cos\frac{\theta}{2}|0&gt; + e^{i(\tau + \theta})sin\frac{\theta}{2}|1&gt;
+\)</span></p>
+<p>y por lo tanto, podemos concluir que la compuerta <span class="math notranslate nohighlight">\(R_{z}(\theta)\)</span> ha cambiado el angulo <span class="math notranslate nohighlight">\(\tau\)</span> a <span class="math notranslate nohighlight">\(\tau + \theta\)</span>, lo que representa una rotacion de <span class="math notranslate nohighlight">\(\theta\)</span> alrededor del eje <span class="math notranslate nohighlight">\(z\)</span> de la esfera de Bloch.</p>
+<p><strong>Nota:</strong> La compuerta <span class="math notranslate nohighlight">\(R_{Z}\)</span> se puede re-escribir de la siguiente manera:</p>
+<p><span class="math notranslate nohighlight">\(
+    R_{z}(\theta) = \begin{pmatrix} e^{-i\frac{\theta}{2}} &amp; 0 \\ 0 &amp; e^{i\frac{\theta}{2}} \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; e^{i\theta} \end{pmatrix}
+\)</span></p>
+<p>y de esta manera, recuperamos las compuertas de Pauli cuando <span class="math notranslate nohighlight">\(\theta = \pi\)</span>, es decir, <span class="math notranslate nohighlight">\(R_{X}(\pi) = X, R_{Y}(\pi) = Y, R_{Z}(\pi) = Z\)</span>. Ademas, las compuertas de rotacion generadas por las matrices de Pauli, y mas especificamente, su producto, nos permiten representar otras compuertas de un cubit, como la compuerta de Hadamard, por ejemplo.</p>
+<p><strong>Ejercicio</strong>
+La compuerta de Hadamard se puede representar como el producto de las rotaciones <span class="math notranslate nohighlight">\(R_{x}\)</span> y <span class="math notranslate nohighlight">\(R_{z}\)</span>, si <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{2}\)</span> y un factor de fase igual a <span class="math notranslate nohighlight">\(e^{-i\pi/2}\)</span>.</p>
+<p>Si definimos un vector unitario <span class="math notranslate nohighlight">\(\hat{n}=(n_{x}, n_{y}, n_{z})\)</span> en tres dimensiones, podemos generalizar las definiciones previas de compuertas de rotacion generadas por las compuertas de Pauli definiendo una rotacion de <span class="math notranslate nohighlight">\(\theta\)</span> sobre dicho eje <span class="math notranslate nohighlight">\(\hat{n}\)</span> mediante la siguiente expresion:</p>
+<p><span class="math notranslate nohighlight">\(
+R_{\hat{n}}(\theta) = e^{-i\frac{\theta\hat{n}\cdot\sigma}{2}} = cos\frac{\theta}{2}I - i sin\frac{\theta}{2}(n_{x}X + n_{y}Y + n_{z}Z)
+\)</span></p>
+<p><strong>Ejercicio</strong>
+Al principio de la seccion, hablabamos de la importancia de reducir el numero de compuertas que utilizamos en durante el proceso de desarrollo de algoritmos, y por lo tanto, podemos hacer uso de algunas identidades como la siguiente: <span class="math notranslate nohighlight">\(XYX=-Y\)</span>. Como ejercicio, comprobar que esta identidad es valida, y despues comprobar que la siguiente identidad, <span class="math notranslate nohighlight">\(XR_{y}(\theta)X = R_{y}(-\theta)\)</span>, tambien es valida.</p>
+<div class="section" id="compuertas-de-un-solo-cubit-como-producto-de-los-operadores-de-rotacion">
+<h3>Compuertas de un solo cubit como producto de los operadores de rotacion<a class="headerlink" href="#compuertas-de-un-solo-cubit-como-producto-de-los-operadores-de-rotacion" title="Permalink to this headline">¶</a></h3>
+<p>Cualquier compuerta cuantica de un solo cubit generada por una transformacion unitaria <em>U</em>, puede ser representada de la siguiente forma:</p>
+<p><span class="math notranslate nohighlight">\(
+U = exp(i\alpha)R_{\hat{n}}(\theta)
+\)</span></p>
+<p>para los numeros reales <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\theta\)</span> y el vector tri-dimensional <span class="math notranslate nohighlight">\(\hat{n}\)</span> que definimos en la seccion anterior.</p>
+<p><strong>Ejemplo</strong>
+Los valores <span class="math notranslate nohighlight">\(\alpha, \theta\)</span>, y <span class="math notranslate nohighlight">\(\hat{n}\)</span> para los cuales la compuerta de Hadamard y la compuerta S se pueden representar como <span class="math notranslate nohighlight">\(exp(i\alpha)R_{\hat{n}}(\theta)\)</span> corresponden a <span class="math notranslate nohighlight">\(alpha= \frac{\pi}{2}\)</span>, <span class="math notranslate nohighlight">\(\theta = \pi\)</span> y <span class="math notranslate nohighlight">\(\vec{n} = \frac{1}{\sqrt{2}} (1,0,1)\)</span>. Empezamos por expander <span class="math notranslate nohighlight">\(R_{\hat{n}}\)</span> para obtener:
+<span class="math notranslate nohighlight">\(
+U = exp(i\alpha)R_{\hat{n}}(\theta) = exp(i\alpha) \left( cos\frac{\theta}{2}I - i sin\frac{\theta}{2} (n_{x}X + n_{y}Y + n_{z}Z) \right)
+\)</span></p>
+<p>y ahora sustituyendo los valores para <span class="math notranslate nohighlight">\(\alpha, \theta\)</span> y <span class="math notranslate nohighlight">\(\vec{n}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+U = exp\left(\frac{i\pi}{2}\right) \left( cos\frac{\pi}{2} I - isin\frac{\pi}{2} \left( \frac{X}{\sqrt{2}} + \frac{Z}{\sqrt{2}} \right) \right)
+\)</span></p>
+<p>y por lo tanto:</p>
+<p><span class="math notranslate nohighlight">\(
+U = \frac{X}{\sqrt{2}} + \frac{Z}{\sqrt{2}} = H
+\)</span></p>
+</div>
+</div>
+<div class="section" id="descomposicion-de-compuertas-de-1-cubit">
+<h2>Descomposicion de compuertas de 1-cubit<a class="headerlink" href="#descomposicion-de-compuertas-de-1-cubit" title="Permalink to this headline">¶</a></h2>
+<p>Cualquier operador unitario arbitrario que actue en un solo cubit puede representarse mediante una combinacion de rotaciones y cambios de amplitud en dicho cubit. Ahora, vamos a obtener una expresion mas general para representar las compuertas de 1-cubit. Esta descomposicion tendra mucha utilidad cuando abordemos el tema de operaciones controladas.</p>
+<div class="section" id="descomposicion-z-y-para-un-operador-unitario-aplicado-a-un-cubit">
+<h3>Descomposicion Z-Y para un operador unitario aplicado a un cubit<a class="headerlink" href="#descomposicion-z-y-para-un-operador-unitario-aplicado-a-un-cubit" title="Permalink to this headline">¶</a></h3>
+<p>Suponiendo que <em>U</em> es una operacion unitaria en un cubit, existen numeros reales <span class="math notranslate nohighlight">\(\alpha, \beta, \gamma\)</span> y <span class="math notranslate nohighlight">\(\delta\)</span> tales que:</p>
+<p><span class="math notranslate nohighlight">\(
+U = e^{i\alpha}R_{z}(\beta)R_{y}(\gamma)R_{z}(\delta) (*)
+\)</span></p>
+<p>y por lo tanto:</p>
+<p><span class="math notranslate nohighlight">\(
+U = \begin{pmatrix}
+	e^{i(\alpha - \beta/2- \delta/2)}cos\frac{\gamma}{2} &amp; -e^{i(\alpha - \beta/2 + \delta/2)}sin\frac{\gamma}{2}\\
+	e^{i(\alpha + \beta/2- \delta/2)}sin\frac{\gamma}{2} &amp; e^{i(\alpha + \beta/2 + \delta/2)}cos\frac{\gamma}{2}
+	\end{pmatrix}
+\)</span></p>
+<p>La idea general de representar las transformaciones aplicadas a un cubit de esta manera, es visualizar que dichas transformaciones representan en realidad, una combinacion de tres tipos de transformacion:</p>
+<ul class="simple">
+<li><p>Cambio de fase por un factor <span class="math notranslate nohighlight">\(\delta\)</span>: <span class="math notranslate nohighlight">\(K(\delta) = e^{i\delta}I\)</span></p></li>
+<li><p>Una rotacion por un factor <span class="math notranslate nohighlight">\(\beta\)</span>:
+<span class="math notranslate nohighlight">\(
+R(\beta) = \begin{pmatrix} cos\beta &amp; sin\beta \\ -sin\beta &amp; cos\beta \end{pmatrix}
+\)</span></p></li>
+<li><p>Una rotacion de fase por un factor <span class="math notranslate nohighlight">\(\alpha\)</span>:
+<span class="math notranslate nohighlight">\(
+T(\alpha) = \begin{pmatrix} e^{i\alpha} &amp; 0 \\ 0 &amp; e^{-i\alpha} \end{pmatrix}
+\)</span></p></li>
+</ul>
+<p>donde las siguientes condiciones aplican:
+<span class="math notranslate nohighlight">\(
+K(\delta_{1} + \delta_{2}) = K(\delta_{1})K(\delta_{2})
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+R(\beta_{1} + \beta_{2}) = R(\beta_{1})R(\beta_{2})
+\)</span></p>
+<p>y</p>
+<p><span class="math notranslate nohighlight">\(
+T(\alpha_{1}+\alpha_{2}) = T(\alpha_{1}) +  T(\alpha_{2})
+\)</span></p>
+<p>y el operador <em>K</em> commuta con si mismo, <em>T</em> y <em>R</em>. Ademas, para compuertas que actuan en un solo cubit, no se incluye el operador <em>K</em>, sino simplemente el factor escalar <span class="math notranslate nohighlight">\(K(\delta) = e^{i\delta}\)</span>, ya que solo representa un cambio de fase global que es equivalente a la matriz de identidad en sistemas de un cubit. Visualmente, podemos representar las transformaciones <em>R</em> y <em>T</em> como rotaciones de un factor de 2<span class="math notranslate nohighlight">\(\alpha\)</span> sobre el eje <em>y-</em> y <em>z-</em> en la esfera de Bloch, respectivamente. De esta manera, cualquier tranformacion unitaria, se puede descomponer en una secuencia de tranformaciones de la forma:</p>
+<p><span class="math notranslate nohighlight">\(
+U = K(\delta)T(\alpha)R(\beta)T(\gamma)
+\)</span></p>
+<p>En conclusion, esta representacion general de compuertas que actuan en un solo cubit, nos permitira desarrollar el formalismo necesario para construit compuertas que actuen en multiples cubits en secciones siguientes.</p>
+<p>Por ultimo, vamos a utilizar la expresion para representar U mediante el producto de tres tipos de transformacions para definir el siguiente corolario que tiene aplicaciones en la construccion de compuertas controladas.</p>
+</div>
+<div class="section" id="corolario">
+<h3>Corolario<a class="headerlink" href="#corolario" title="Permalink to this headline">¶</a></h3>
+<p>Toda compuerta unitaria <em>U</em> de 1-cubit se puede escribir en la forma:</p>
+<p><span class="math notranslate nohighlight">\(
+U = e^{i\alpha}AXBXC,
+\)</span></p>
+<p>donde A, B y C son operadores unitarios que cumplen <span class="math notranslate nohighlight">\(ABC=I\)</span>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "delgadoandrea/computacion-cuantica",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./circuitos_cuanticos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="circuitos.html" title="previous page">El Modelo de Circuitos Cuanticos</a>
+    <a class='right-next' id="next-link" href="compuertas_control.html" title="next page">Compuertas Control-U</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andrea Delgado<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
