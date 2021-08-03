@@ -264,9 +264,36 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplo-estados-de-bell">
-   Ejemplo: Estados de Bell
+  <a class="reference internal nav-link" href="#valor-esperado-o-medio-de-una-observable">
+   Valor esperado o medio de una observable
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mediciones-de-tipo-von-neumann">
+   Mediciones de tipo Von Neumann
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mediciones-parciales">
+   Mediciones Parciales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-fisica-de-mediciones-de-tipo-von-neumann">
+   Implementacion fisica de mediciones de tipo Von Neumann
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principio-de-la-medida-diferida">
+   Principio de la medida diferida
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-estados-de-bell">
+     Ejemplo: Estados de Bell
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mediciones-proyectivas-incompletas">
@@ -286,35 +313,82 @@
                 
   <div class="section" id="mediciones-con-circuitos-cuanticos">
 <span id="mediciones-cuanticas"></span><h1>Mediciones con Circuitos Cuanticos<a class="headerlink" href="#mediciones-con-circuitos-cuanticos" title="Permalink to this headline">¶</a></h1>
-<p>En esta seccion vamos a explorar como podemos utilizar circuitos cuanticos para describir e implementar los diferentes tipos de mediciones cuanticas descritas durante las primeras sesiones del curso. Especificamente, el tipo de mediciones que vamos a explorar es el conjunto de mediciones que se ejecutan con respecto a la base estandar.</p>
-<p>Las mediciones proyectivas son muy utilizadas en la computacion y comunicacion cuanticas. En particular, los protocolos de codificacion superdensa y teleportacion cuantica estan basados en mediciones denominadas de <em>Von Neumann</em>. Sea un estado <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> que expresado en la base ortonormal <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> tiene el desarrollo:</p>
+<p>En esta seccion vamos a explorar como utilizar circuitos cuánticos para describir e implementar los diferentes tipos de mediciones cuánticas descritas durante las primeras sesiones del curso. Especificamente, el tipo de mediciones que vamos a explorar es el conjunto de mediciones que se ejecutan con respecto a la base estandar.</p>
+<p>Durante los primeros capitulos se definió la base estandar como la base formada por los vectores ortogonales |0&gt; y |1&gt;. Suponiendo que tenemos n set universal de compuertas cuánticas, asi como la habilidad de ejecutar una medicion en cualquier cubit en l abase estandar, podemos definir un estado cuantico arbitrario como <span class="math notranslate nohighlight">\(|\Psi&gt; = \alpha_{0}|0&gt; + \alpha_{1}|1&gt;\)</span>. La probabilidad de obtener el estado <span class="math notranslate nohighlight">\(|b&gt;\)</span> esta dada por la expresion <span class="math notranslate nohighlight">\(|\alpha_{b}|^{2}\)</span>.</p>
+<p>Tambien definimos los operadores de proyeccion <span class="math notranslate nohighlight">\(P_{0}=|0&gt;&lt;0|\)</span> y <span class="math notranslate nohighlight">\(P_{1}=|1&gt;&lt;1|\)</span> que satisfacen la condicion <span class="math notranslate nohighlight">\(P_{0}+P_{1} = I\)</span>. Tambien podemos considerar el operador de proyeccion u “observable”:</p>
 <p><span class="math notranslate nohighlight">\(
-|\Psi&gt; = \sum_{j}\alpha_{j}|\psi_{j}&gt;
+M = 0P_{0} + 1P_{1}
 \)</span></p>
-<p>Una <strong>medicion de Von Neumann</strong> de <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> con respecto al conjunto de bases <span class="math notranslate nohighlight">\(|\psi&gt;\)</span>, descritos por los proyectores ortogonales <span class="math notranslate nohighlight">\(\left{|\psi_{j}&gt;&lt;\psi_{j}|\right}\)</span> dara como resultado “j” y el estado quedará en el estado <span class="math notranslate nohighlight">\(|\psi_{j}&gt;\)</span>  con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{j}|^{2}\)</span>:</p>
+<p>donde 0 y 1 son los valores caracteristicos del operador. Cuando medimos esta observable <em>M</em>, la pobabilidad de obtener el valor caracteristico <em>b</em> es:</p>
 <p><span class="math notranslate nohighlight">\(
-Tr(|\Psi&gt;&lt;\Psi||\psi_{j}&gt;&lt;\psi_{j}|) = Tr(&lt;\psi_{j}|\Psi&gt;&lt;\Psi|\psi_{j}&gt;)
+Pr(b) = &lt;\Phi|P_{b}|\Phi&gt; = |\alpha_{b}|^{2}
+\)</span></p>
+<p>y despues de la medicion, el sistema se encuentra en el estado</p>
+<p><span class="math notranslate nohighlight">\(
+\frac{P_{b}|\Phi&gt;}{\sqrt{Pr(b)}} = \frac{\alpha_{b}}{|\alpha_{b}|}|b&gt; = |b&gt;
+\)</span></p>
+<div class="section" id="valor-esperado-o-medio-de-una-observable">
+<h2>Valor esperado o medio de una observable<a class="headerlink" href="#valor-esperado-o-medio-de-una-observable" title="Permalink to this headline">¶</a></h2>
+<p>Si asociamos el valor caracteristico <em>b</em> con el resultado |b&gt;, entonces el valor esperado o medio tiene la siguiente forma:</p>
+<p><span class="math notranslate nohighlight">\(
+\sum_{b} b Pr(b) = \sum_{b}b &lt;\Phi|P_{b}|\Phi&gt; = &lt;\Psi|(\sum_{b}bP_{b})|\Psi&gt; 
 \)</span></p>
 <p><span class="math notranslate nohighlight">\(
-= &lt;\psi_{j}|\Psi&gt;&lt;\Psi|\psi_{j}&gt;
+= Tr\left(&lt;\Psi|(\sum_{b}bP_{b})|\Psi&gt;\right) = Tr(M|\Psi&gt;&lt;\Psi|)
 \)</span></p>
+</div>
+<div class="section" id="mediciones-de-tipo-von-neumann">
+<h2>Mediciones de tipo Von Neumann<a class="headerlink" href="#mediciones-de-tipo-von-neumann" title="Permalink to this headline">¶</a></h2>
+<p>Las mediciones proyectivas son muy utilizadas en la computacion y comunicacion cuanticas. En particular, los protocolos de codificacion superdensa y teleportacion cuantica estan basados en mediciones denominadas de <em>Von Neumann</em>. Para entender mejor este tipo de mediciones, empezamos asumiendo de nuevo que tenemos un set universal de compuertas cuanticas y la capacidad de medir cada uno de los cubits en nuestro sistema, en la base estandar. Sea un estado <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> que expresado en la base ortonormal <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> tiene el desarrollo:</p>
 <p><span class="math notranslate nohighlight">\(
-|&lt;\psi_{j}|\Psi&gt;|^{2}
+|\Psi&gt; = \sum_{x\in \{0,1\}^n}\alpha_{x}|x&gt;
 \)</span></p>
+<p>Una <strong>medicion de Von Neumann</strong> de <span class="math notranslate nohighlight">\(|\Psi&gt;\)</span> con respecto al conjunto de bases <span class="math notranslate nohighlight">\(|x&gt;\)</span>, descritos por los proyectores ortogonales <span class="math notranslate nohighlight">\(\left(|x&gt;&lt;x|\right)\)</span> dara como resultado “x” y el sistema quedará en el estado <span class="math notranslate nohighlight">\(|x&gt;\)</span>  con probabilidad <span class="math notranslate nohighlight">\(|\alpha_{x}|^{2}\)</span>.</p>
+</div>
+<div class="section" id="mediciones-parciales">
+<h2>Mediciones Parciales<a class="headerlink" href="#mediciones-parciales" title="Permalink to this headline">¶</a></h2>
+<p>Si unicamente ejecutamos una medicion en el primer cubit, la probabilidad de encontrar los otros cubits en el estado |0&gt; sigue teniendo la forma:</p>
 <p><span class="math notranslate nohighlight">\(
-|\alpha_{j}|^{2}
+p_{0} = \sum_{x\in 0 \{0,1\}^{n-1}}|\alpha_{x}|^{2}
 \)</span></p>
+<p>Los cubits restantes (n-1) se encuentran en el estado renormalizado:</p>
+<p><span class="math notranslate nohighlight">\(
+p_{0} = \sum_{x\in 0 \{0,1\}^{n-1}}\frac{\alpha_{x}}{\sqrt{p_{0}}}|x&gt;
+\)</span></p>
+<p>que es muy similar al teorema de Bayes. Esta medicion parcial corresponde a medir la observable</p>
+<p><span class="math notranslate nohighlight">\(
+M = 0|0&gt;&lt;0| \otimes I^{n-1} + 1|1&gt;&lt;1|\otimes I^{n-1}
+\)</span></p>
+<p>Entonces, una medicion de tipo <strong>Von Neumann</strong> es un tipo especifico de medicion proyectiva. Si empezamos de una base normal <span class="math notranslate nohighlight">\(\{|\psi_{k}&gt;\}\)</span> y ejecutamos una medicion de tipo Von Neumann en el estado <span class="math notranslate nohighlight">\(|\Phi&gt; = \sum_{k}\alpha_{k}|\psi_{k}&gt;\)</span> con respecto a dicha base, obtendremos el estado <span class="math notranslate nohighlight">\(|\psi_{k}&gt;\)</span> con probabilidad</p>
+<p><span class="math notranslate nohighlight">\(
+|\alpha_{k}|^{2} = Tr\left(|\psi_{k}&gt;&lt;\psi_{k}||\Phi&gt;&lt;\Phi|\right)
+\)</span></p>
+</div>
+<div class="section" id="implementacion-fisica-de-mediciones-de-tipo-von-neumann">
+<h2>Implementacion fisica de mediciones de tipo Von Neumann<a class="headerlink" href="#implementacion-fisica-de-mediciones-de-tipo-von-neumann" title="Permalink to this headline">¶</a></h2>
 <p>Normalmente, un dispositivo fisico es capaz de ejecutar una medicion con respecto a la base estandar en los cubits individuales, pero se puede utilizar un circuito cuantico que registra la medicion de Von Neumann descrita por medio de un registro clasico de cubits multiples. Primero se construye un circuito que realiza la transformacion unitaria:</p>
 <p><span class="math notranslate nohighlight">\(
 U|\psi&gt; = |j&gt;
 \)</span></p>
 <p>en esta expresion, el indice <em>j</em> se supone en <em>n-bit</em> binario (es decir, 0 o 1) y |j&gt; es el estado de la base computacional de <em>n-cubits</em> correspondiente a <em>j</em>. <strong>Entonces, podemos decir que el operador <span class="math notranslate nohighlight">\(U\)</span> hace el cambio de base de la base <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> a la base computacional.</strong> Por lo tanto, para un estado arbitrario <span class="math notranslate nohighlight">\(\sum_{j}\alpha_{j}|\psi_{j}&gt;\)</span>, utilizamos un circuito cuantico para ejecutar el cambio de base mediado por el operador <em>U</em> y despues ejecutamos una medicion el registro clasico (en este caso, <span class="math notranslate nohighlight">\(|j&gt;\)</span>) en la base computacional. Finalmente se aplica el cambio de base inverso, mediado por el operador <span class="math notranslate nohighlight">\(U^{-1}\)</span> (reemplazando cada compuerta u operador por su inverso). El circuito completo se muestra en la siguiente figura:</p>
 <p><img alt="m1" src="../_images/m1.png" /></p>
-<p>Alternativamente, es posible utilizar una estrategia en la que no se mide el estado intermedio en la base computacional. En cambio, se “copia” la informacion del sistema en el que estamos interesados, a un registro clasico de tipo ancilla y despues ejecutamos una medicion en la base estandar. Esta idea se puede visualizar en el siguiente diagrama:</p>
+</div>
+<div class="section" id="principio-de-la-medida-diferida">
+<h2>Principio de la medida diferida<a class="headerlink" href="#principio-de-la-medida-diferida" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>“Una medida en una linea de un cubit, seguida de operaciones clasicamente controladas en otros cubits, que estan controlados por los resultados de la primera medida, es equivalente a las compuertas cuanticas controladas correspondientes con una medida al final de la linea”.</p>
+</div></blockquote>
+<p><img alt="m1" src="../_images/meddif.png" /></p>
+<p>Los dos circuitos en el diagrama superior son equivalentes. En uno, la medicion ocurre antes de la aplicacion de una operacion, y en otro ocurre despues de esta. En otras palabras, es un principio de computacion cuantica que afirma que retrasar las mediciones al final de la computacion no afecta a la distribucion de probabilidades del estado final. Esto es posible porque la medicion conmuta con los operadores. Este principio tiene aplicaciones con el proposito de:</p>
+<ul class="simple">
+<li><p>Reducir las compuertas cuanticas complejas a operaciones mas simples,</p></li>
+<li><p>Realizar operaciones utilizando un numero menor de cubits.</p></li>
+</ul>
+<p>Aplicando este principio de medicion diferida, alternativamente, es posible utilizar una estrategia en la que no se mide el estado intermedio en la base computacional. En cambio, se “copia” la informacion del sistema en el que estamos interesados, a un registro clasico de tipo ancilla y despues ejecutamos una medicion en la base estandar. Esta idea se puede visualizar en el siguiente diagrama:</p>
 <p><img alt="m2" src="../_images/m2.png" /></p>
 <p>En este circuito se registran los cubits en los cables inferiores que son medidos luego en la base computacional.</p>
 <div class="section" id="ejemplo-estados-de-bell">
-<h2>Ejemplo: Estados de Bell<a class="headerlink" href="#ejemplo-estados-de-bell" title="Permalink to this headline">¶</a></h2>
+<h3>Ejemplo: Estados de Bell<a class="headerlink" href="#ejemplo-estados-de-bell" title="Permalink to this headline">¶</a></h3>
 <p>Como ejemplo de cambio de base <em>U</em> vamos a suponer que queremos implementar una medicion de tipo <em>Von Neumann</em> en un estado formado por dos cubits, con respecto a la base ortonormal formada por los estados de Bell:</p>
 <p><span class="math notranslate nohighlight">\(
 |\beta_{00}&gt; = \frac{1}{\sqrt{2}}(|00&gt; + |11&gt;)
@@ -340,6 +414,7 @@ U|\psi&gt; = |j&gt;
 |\psi_{3}&gt; = \frac{1}{\sqrt{2}} (|00&gt; + |11&gt;)
 \)</span></p>
 <p>y por lo tanto, tenemos que <span class="math notranslate nohighlight">\(|\psi_{3}&gt; = |\beta_{00}&gt;\)</span>. De esta manera, verificamos que el circuito ejecuto correctamente el cambio de base en el estado de entrada <span class="math notranslate nohighlight">\(|00&gt;\)</span>. De manera similar, el mismo circuito ejecuta el cambio de base en los otros tres estados posibles en la base computacional, |01&gt;, |10&gt;, y |11&gt;, transformandolos en <span class="math notranslate nohighlight">\(|\beta_{01}&gt;,|\beta_{10}&gt;\)</span> y <span class="math notranslate nohighlight">\(|\beta_{11}&gt;\)</span>, respectivamente.</p>
+</div>
 </div>
 <div class="section" id="mediciones-proyectivas-incompletas">
 <h2>Mediciones proyectivas incompletas<a class="headerlink" href="#mediciones-proyectivas-incompletas" title="Permalink to this headline">¶</a></h2>
